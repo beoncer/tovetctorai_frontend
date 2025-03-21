@@ -9,16 +9,18 @@ import SharedBackground from "@/components/shared-background"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white relative">
+    <main className="relative min-h-screen bg-white">
       <SharedBackground />
       <BackgroundPaths />
       <div className="relative z-10">
         <Navbar />
         <Hero />
-        <HowItWorks />
-        <Reviews />
-        <Pricing />
-        <Footer />
+        <div className="mt-32">
+          <HowItWorks />
+          <Reviews />
+          <Pricing />
+          <Footer />
+        </div>
       </div>
     </main>
   )

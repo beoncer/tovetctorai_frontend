@@ -43,43 +43,37 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <div className="min-h-screen bg-white relative">
+    <main className="relative min-h-screen bg-white">
       <SharedBackground />
       <BackgroundPaths />
-      <div className="relative z-10 flex flex-col min-h-screen">
+      <div className="relative z-10">
         <Navbar />
-        <main className="flex-grow">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8 py-24">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-center mb-16"
-            >
-              <h1 className="text-4xl md:text-5xl font-bold text-red-600 mb-4">Frequently Asked Questions</h1>
-              <p className="text-xl text-black/70">
-                Everything you need to know about our vectorization service
-              </p>
-            </motion.div>
-
-            <div className="grid gap-8 max-w-4xl mx-auto">
-              {faqs.map((faq, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-white/80 backdrop-blur-sm border border-red-100 rounded-xl p-6 shadow-lg"
-                >
-                  <h3 className="text-xl font-bold text-black mb-3">{faq.question}</h3>
-                  <p className="text-black/70 leading-relaxed">{faq.answer}</p>
-                </motion.div>
-              ))}
-            </div>
+        <div className="max-w-5xl mx-auto px-6 lg:px-8 py-24">
+          <div className="text-center mb-16">
+            <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
+              Frequently Asked Questions
+            </h1>
+            <p className="text-xl text-black/70">
+              Everything you need to know about our vectorization service
+            </p>
           </div>
-        </main>
+          <div className="space-y-8">
+            {faqs.map((faq, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white/80 backdrop-blur-sm border border-red-100 rounded-xl p-6 shadow-lg"
+              >
+                <h3 className="text-xl font-bold text-black mb-3">{faq.question}</h3>
+                <p className="text-black/70 leading-relaxed">{faq.answer}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
         <Footer />
       </div>
-    </div>
+    </main>
   )
 } 
