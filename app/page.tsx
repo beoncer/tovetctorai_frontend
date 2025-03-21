@@ -4,14 +4,14 @@ import HowItWorks from "@/components/how-it-works"
 import Reviews from "@/components/reviews"
 import Pricing from "@/components/pricing"
 import Footer from "@/components/footer"
+import BackgroundPaths from "@/components/background-paths"
 import SharedBackground from "@/components/shared-background"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white relative overflow-hidden">
-      <div className="absolute inset-0 w-full h-full">
-        <SharedBackground />
-      </div>
+    <main className="min-h-screen bg-white relative">
+      <SharedBackground />
+      <BackgroundPaths />
       <div className="relative z-10">
         <Navbar />
         <Hero />
