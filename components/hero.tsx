@@ -1,52 +1,51 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import { Upload } from "lucide-react"
 
 export default function Hero() {
   return (
-    <div className="relative min-h-[calc(100vh-76px)] flex items-center">
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-black mb-6">
-              Transform Your Images into
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-700">
-                {" "}
-                Vector Art
-              </span>
+    <section className="py-24 relative">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+          {/* Left side - Text content */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-left"
+          >
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-black">
+              <span className="block">Transform Your</span>
+              <span className="block">Images into</span>
+              <span className="block text-red-600">Vector Art</span>
             </h1>
+            <p className="text-xl text-black/70 max-w-xl mb-8">
+              Upload any image and our AI will convert it into high-quality vector graphics,
+              perfect for logos, illustrations, and designs.
+            </p>
           </motion.div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-black/70 text-xl mb-8 max-w-2xl mx-auto"
-          >
-            Upload any image and our AI will convert it into high-quality vector graphics, perfect for logos, illustrations, and designs.
-          </motion.p>
-
+          {/* Right side - Uploader */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="w-full max-w-3xl mx-auto"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="lg:justify-self-end w-full max-w-xl"
           >
-            <div className="border-2 border-dashed border-red-200 rounded-lg p-8 bg-white/50 backdrop-blur-sm hover:border-red-300 transition-colors">
-              <div className="flex flex-col items-center justify-center space-y-4">
-                <Upload className="w-12 h-12 text-red-500" />
-                <div className="text-center">
-                  <p className="text-lg font-medium text-black">Drag and drop your image here</p>
-                  <p className="text-sm text-black/70 mt-1">or click to browse</p>
-                </div>
-                <p className="text-sm text-black/50">PNG, JPG, JPEG up to 10MB</p>
+            <div className="border-2 border-dashed border-red-200 rounded-2xl p-12 text-center h-[280px] flex flex-col items-center justify-center">
+              <div className="mx-auto w-16 h-16 bg-red-50 rounded-xl flex items-center justify-center mb-4">
+                <Upload className="w-8 h-8 text-red-600" />
               </div>
+              <h3 className="text-xl font-bold text-black mb-2">
+                Drag and drop your image here
+              </h3>
+              <p className="text-black/70 mb-2">or click to browse</p>
+              <p className="text-black/50 text-sm">PNG, JPG, JPEG up to 10MB</p>
             </div>
           </motion.div>
         </div>
       </div>
-    </div>
+    </section>
   )
 } 

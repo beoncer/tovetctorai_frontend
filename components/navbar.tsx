@@ -11,16 +11,17 @@ export default function Navbar() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="flex items-center justify-between px-6 py-4 backdrop-blur-sm"
+      className="flex items-center justify-between max-w-7xl mx-auto px-6 lg:px-8 py-4 backdrop-blur-sm"
     >
       <Link href="/" className="flex items-center">
-        <span className="text-red-600 font-bold text-2xl font-space-grotesk">Tovector.ai</span>
+        <span className="text-red-600 font-bold text-2xl font-space-grotesk pl-0.5">Tovector.ai</span>
       </Link>
 
       <div className="hidden md:flex items-center space-x-8">
         <NavLink href="/examples">Examples</NavLink>
         <NavLink href="/pricing">Pricing</NavLink>
         <NavLink href="/faq">FAQ</NavLink>
+        <NavLink href="/contact">Contact</NavLink>
       </div>
 
       <div className="hidden md:flex items-center space-x-4">
