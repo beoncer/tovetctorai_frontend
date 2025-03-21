@@ -27,10 +27,12 @@ export default function Navbar() {
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" className="text-black hover:text-red-600 hover:bg-transparent">
-              Sign In
+            <Button variant="ghost" className="text-black hover:text-red-600 hover:bg-transparent" asChild>
+              <Link href="/login">Sign In</Link>
             </Button>
-            <Button className="bg-red-600 hover:bg-red-700 text-white font-medium">Get Started</Button>
+            <Button className="bg-red-600 hover:bg-red-700 text-white font-medium" asChild>
+              <Link href="/signup">Get Started</Link>
+            </Button>
           </div>
 
           <Button variant="ghost" size="icon" className="md:hidden text-black">
