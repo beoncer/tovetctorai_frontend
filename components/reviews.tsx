@@ -42,34 +42,7 @@ function StarRating({ rating }: { rating: number }) {
 
 export default function Reviews() {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          className="absolute top-1/4 -right-16 w-32 h-32 bg-red-50 rounded-full"
-          animate={{
-            y: [0, -20, 0],
-            x: [0, 20, 0],
-          }}
-          transition={{
-            duration: 5,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute bottom-1/4 -left-16 w-24 h-24 bg-red-50 rounded-full"
-          animate={{
-            y: [0, 30, 0],
-            x: [0, -30, 0],
-          }}
-          transition={{
-            duration: 7,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "easeInOut",
-          }}
-        />
-      </div>
-
+    <section className="py-24 relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <motion.div
           className="text-center"
@@ -88,7 +61,7 @@ export default function Reviews() {
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.name}
-              className="bg-white border border-red-100 shadow-lg rounded-xl overflow-hidden"
+              className="bg-white/80 backdrop-blur-sm border border-red-100 shadow-lg rounded-xl overflow-hidden"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}

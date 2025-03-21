@@ -26,7 +26,7 @@ export default function HowItWorks() {
   ]
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-24 relative">
       <div className="container mx-auto px-6">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
@@ -46,7 +46,7 @@ export default function HowItWorks() {
               transition={{ duration: 0.5, delay: index * 0.2 }}
               className="relative"
             >
-              <div className="flex flex-col items-center text-center space-y-4 h-full p-6">
+              <div className="flex flex-col items-center text-center space-y-4 h-full p-6 bg-white/80 backdrop-blur-sm rounded-xl">
                 <div className="w-16 h-16 bg-red-50 rounded-xl flex items-center justify-center mb-4">
                   <step.icon className="w-8 h-8 text-black" />
                 </div>

@@ -45,35 +45,7 @@ const plans = [
 
 export default function Pricing() {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
-      {/* Add background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          className="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 bg-red-50 rounded-full"
-          animate={{
-            scale: [1, 1.1, 1],
-            rotate: [0, 45, 0],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "linear",
-          }}
-        />
-        <motion.div
-          className="absolute -bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-red-50 rounded-full"
-          animate={{
-            scale: [1, 1.2, 1],
-            rotate: [0, -45, 0],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "linear",
-          }}
-        />
-      </div>
-
+    <section className="py-24 relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <motion.div
           className="text-center"
@@ -92,7 +64,7 @@ export default function Pricing() {
           {plans.map((plan, index) => (
             <motion.div
               key={plan.name}
-              className="bg-white border border-red-100 rounded-xl shadow-lg divide-y divide-red-100"
+              className="bg-white/80 backdrop-blur-sm border border-red-100 rounded-xl shadow-lg divide-y divide-red-100"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
