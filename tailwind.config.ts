@@ -20,8 +20,9 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-inter-sans)", ...fontFamily.sans],
+        sans: ["var(--font-space-grotesk)", ...fontFamily.sans],
         mono: [...fontFamily.mono],
+        "space-grotesk": ["var(--font-space-grotesk)"],
       },
       colors: {
         field: "hsl(var(--field))",

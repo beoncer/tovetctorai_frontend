@@ -2,19 +2,22 @@ import type { Metadata } from "next"
 
 import "./globals.css"
 
-import { Inter } from "next/font/google"
+import { Space_Grotesk } from "next/font/google"
 import Script from "next/script"
 
 import { Toaster } from "@/components/ui/sonner"
 import { ThemeProvider } from "@/components/theme-provider"
 
-const inter = Inter({ subsets: ["latin"] })
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
+  weight: ["400", "500", "600", "700"],
+})
 
 export const metadata: Metadata = {
-  title: "SaaStart | Auth0 by Okta",
-  description:
-    "SaaStart is a reference B2B SaaS application built using Next.js and Auth0 by Okta.",
-  metadataBase: new URL("https://saastart.app"),
+  title: "Tovector.ai",
+  description: "AI-powered vector graphics platform",
+  metadataBase: new URL("https://tovector.ai"),
 }
 
 export default async function RootLayout({
@@ -23,8 +26,8 @@ export default async function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={inter.className} suppressHydrationWarning>
-      <body className="min-h-screen bg-background font-sans antialiased">
+    <html lang="en" className={spaceGrotesk.variable} suppressHydrationWarning>
+      <body className="min-h-screen bg-background font-space-grotesk antialiased">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
