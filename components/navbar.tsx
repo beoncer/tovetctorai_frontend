@@ -1,10 +1,20 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Menu } from "lucide-react"
+import { Menu, ChevronDown } from "lucide-react"
 import { motion } from "framer-motion"
 import Link from "next/link"
 import type React from "react"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+
+// Mock auth state - replace with your actual auth logic
+const isLoggedIn = false
+const userEmail = "john@example.com"
 
 export default function Navbar() {
   return (
@@ -27,12 +37,35 @@ export default function Navbar() {
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" className="text-black hover:text-red-600 hover:bg-transparent" asChild>
-              <Link href="/login">Sign In</Link>
-            </Button>
-            <Button className="bg-red-600 hover:bg-red-700 text-white font-medium" asChild>
-              <Link href="/signup">Get Started</Link>
-            </Button>
+            {isLoggedIn ? (
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" className="text-gray-600 hover:text-black">
+                    {userEmail}
+                    <ChevronDown className="ml-2 h-4 w-4" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-48">
+                  <DropdownMenuItem asChild>
+                    <Link href="/dashboard" className="w-full">
+                      Dashboard
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    Logout
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <>
+                <Button variant="ghost" className="text-black hover:text-red-600 hover:bg-transparent" asChild>
+                  <Link href="/login">Sign In</Link>
+                </Button>
+                <Button className="bg-red-600 hover:bg-red-700 text-white font-medium" asChild>
+                  <Link href="/signup">Get Started</Link>
+                </Button>
+              </>
+            )}
           </div>
 
           <Button variant="ghost" size="icon" className="md:hidden text-black">
